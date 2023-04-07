@@ -9,7 +9,7 @@ def dfs(s):
         if not visited[i]:
             dfs(i)
     return visited
-
+ 
 
 
 # 전제 -> 인접행렬 처리
@@ -42,6 +42,6 @@ visited에서 굉장히 애를 먹었다. .
 '''
 
 
-
+ 
 
 
