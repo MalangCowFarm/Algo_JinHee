@@ -13,25 +13,30 @@
 n, m = map(int,input().split())
 lst = list(map(int,input().split()))
 
+end = 0
 ans = n+1
 sm = 0
-end = 0
+cnt = 0  # 리스트 길이 변수
 
 # start 증가시키며 반복
 for start in range(n):
     while sm<m and end<n:
         sm += lst[end]
         end += 1
+        cnt += 1
+
     # 부분합이 m일때 cnt+=1
-    if sm == m:
-        if len(lst[start:end]) < ans:
-            ans = len(lst[start:end])
+    if sm >= m:
+        if cnt < ans:
+            ans = cnt
+
     sm -= lst[start]
+    cnt -= 1
 
 if ans == n+1:
     print(0)
 else:
     print(ans)
-    # end를 가능한 만큼 이동
+
 
 
